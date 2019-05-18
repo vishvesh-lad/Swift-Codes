@@ -73,6 +73,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.clear
         self.window?.makeKeyAndVisible()
         
+        let mainStoryboard = UIStoryboard.init(name: StoryBoardIdentifier.MainStoryBoard, bundle: nil)
+        let objLoginVC = mainStoryboard.instantiateViewController(withIdentifier: ViewControllerIdentifier.LoginVC)
+        let navController = UINavigationController.init(rootViewController : objLoginVC)
+        navController.viewControllers = [objLoginVC]
+        self.window?.rootViewController = navController
+        self.window?.backgroundColor = UIColor.clear
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
